@@ -5,6 +5,9 @@ node_modules/
 dist/
 build/
 
+# Generated optimized images (regenerated at build time)
+public/images/optimized/
+
 # Environment variables
 .env
 .env.local

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ResponsiveImage from "./components/ResponsiveImage";
 import {
   Phone,
   ShieldCheck,
@@ -595,10 +596,12 @@ export default function App() {
             >
               <div className="relative bg-white p-3 rounded-[30px] border border-[#c9a227]/40 card-shadow-lg">
                 <div className="overflow-hidden arch-img border border-[#0f2340]/10">
-                  <img
+                  <ResponsiveImage
                     src="/images/hero-white-thobe.jpg"
                     alt="عميل سعودي بالثوب الأبيض والغترة يستقبل خدمة درة سبا المنزلية ببيته"
                     className="h-[380px] sm:h-[480px] w-full object-cover"
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </div>
                 <div className="absolute top-6 right-6 flex flex-col gap-2">
@@ -863,10 +866,9 @@ export default function App() {
                   className={`grid lg:grid-cols-[1fr_1.05fr] gap-0 mt-4 ${flip ? "lg:[&>*:first-child]:order-2" : ""}`}
                 >
                   <div className="relative min-h-[300px] lg:min-h-[500px] bg-[#eef2ee]">
-                    <img
+                    <ResponsiveImage
                       src={p.image}
                       alt={p.name + " - خدمة منزلية احترافية لحد بيتك"}
-                      loading="lazy"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0b1a30]/70 via-transparent to-transparent" />
@@ -1156,7 +1158,7 @@ export default function App() {
               viewport={{ once: true }}
               className="relative rounded-[26px] overflow-hidden bg-white border border-[#c9a227]/40 card-shadow-lg min-h-[380px]"
             >
-              <img
+              <ResponsiveImage
                 src="/images/team-uniform.jpg"
                 alt="أخصائي درة سبا بالزي البني الرسمي بشعار DORH SPA على الصدر"
                 className="absolute inset-0 w-full h-full object-cover"
@@ -1290,9 +1292,9 @@ export default function App() {
       {/* ===== FINAL CTA ===== */}
       <section className="max-w-7xl mx-auto px-4 pb-10">
         <div className="relative rounded-[28px] overflow-hidden border border-[#c9a227]/40 card-shadow-lg">
-          <img
+          <ResponsiveImage
             src="/images/pkg-vip.jpg"
-            alt=""
+            alt="باقة درة سبا VIP"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-l from-[#0b1a30]/97 via-[#0b1a30]/90 to-[#0b1a30]/55" />
