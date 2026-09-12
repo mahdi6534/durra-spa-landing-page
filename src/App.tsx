@@ -602,6 +602,7 @@ export default function App() {
                     className="h-[380px] sm:h-[480px] w-full object-cover"
                     loading="eager"
                     fetchPriority="high"
+                    sizes="(max-width: 640px) 340px, (max-width: 1024px) 50vw, 500px"
                   />
                 </div>
                 <div className="absolute top-6 right-6 flex flex-col gap-2">
@@ -870,6 +871,7 @@ export default function App() {
                       src={p.image}
                       alt={p.name + " - خدمة منزلية احترافية لحد بيتك"}
                       className="absolute inset-0 w-full h-full object-cover"
+                      sizes="(max-width: 640px) 370px, (max-width: 1024px) 50vw, 500px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0b1a30]/70 via-transparent to-transparent" />
                     <div className="absolute top-4 right-4">
@@ -1162,6 +1164,7 @@ export default function App() {
                 src="/images/team-uniform.jpg"
                 alt="أخصائي درة سبا بالزي البني الرسمي بشعار DORH SPA على الصدر"
                 className="absolute inset-0 w-full h-full object-cover"
+                sizes="(max-width: 640px) 100vw, 700px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0b1a30]/85 via-transparent to-transparent" />
               <div className="absolute top-4 right-4 flex flex-col gap-2">
@@ -1296,6 +1299,7 @@ export default function App() {
             src="/images/pkg-vip.jpg"
             alt="باقة درة سبا VIP"
             className="absolute inset-0 w-full h-full object-cover"
+            sizes="(max-width: 640px) 100vw, 1200px"
           />
           <div className="absolute inset-0 bg-gradient-to-l from-[#0b1a30]/97 via-[#0b1a30]/90 to-[#0b1a30]/55" />
           <div className="relative p-6 sm:p-12 grid lg:grid-cols-2 gap-6 items-center">

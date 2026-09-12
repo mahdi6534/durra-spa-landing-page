@@ -4,6 +4,7 @@ interface ResponsiveImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
   widths?: number[];
+  sizes?: string;
 }
 
 function getBaseName(src: string): string {
@@ -24,6 +25,7 @@ export default function ResponsiveImage({
   src,
   alt,
   widths = [400, 800, 1200],
+  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px",
   loading = "lazy",
   decoding = "async",
   className = "",
@@ -42,20 +44,19 @@ export default function ResponsiveImage({
     .map((w) => `${optimized}${base}-${w}w.jpg ${w}w`)
     .join(", ");
 
-  const fallbackSrc = `${optimized}${base}${ext === ".webp" ? ".jpg" : ext}`;
-  const defaultSrc = `${optimized}${base}-800w.jpg`;
+  const defaultSrc = `${optimized}${base}-400w.jpg`;
 
   return (
     <picture>
       <source
         type="image/webp"
         srcSet={webpSrcSet}
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+        sizes={sizes}
       />
       <source
         type="image/jpeg"
         srcSet={jpgSrcSet}
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+        sizes={sizes}
       />
       <img
         src={defaultSrc}
