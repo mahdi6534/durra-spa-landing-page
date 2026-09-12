@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cairo: "Cairo", sans-serif;
+  --font-almarai: "Almarai", sans-serif;
+  --font-ruqaa: "Aref Ruqaa", serif;
+  --font-amiri: "Amiri", serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Almarai", "Cairo", sans-serif;
+  background: #faf7f1;
+  color: #1b2a44;
+  overflow-x: hidden;
+}
+
+.font-display { font-family: "Cairo", sans-serif; font-weight: 900; }
+.font-ruqaa { font-family: "Aref Ruqaa", serif; }
+
+.gold-text {
+  background: linear-gradient(120deg, #8a6a24 0%, #c9a227 30%, #a97e3f 55%, #d9b64a 75%, #8a6a24 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 7s linear infinite;
+}
+@keyframes shine { to { background-position: 200% center; } }
+
+.arch-img {
+  border-radius: 999px 999px 28px 28px;
+}
+
+.sand-pattern {
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(201,162,39,0.10) 0, transparent 42%),
+    radial-gradient(circle at 85% 85%, rgba(124,154,141,0.12) 0, transparent 42%),
+    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(15,35,64,0.025) 14px 15px);
+}
+
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 6 L42 30 L66 36 L42 42 L36 66 L30 42 L6 36 L30 30 Z' fill='none' stroke='%23c9a227' stroke-opacity='0.12' stroke-width='1'/%3E%3Ccircle cx='36' cy='36' r='3' fill='none' stroke='%23c9a227' stroke-opacity='0.12'/%3E%3C/svg%3E");
+}
+
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+.animate-floaty { animation: floaty 5s ease-in-out infinite; }
+
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(50%); } }
+.animate-marquee { animation: marquee 30s linear infinite; }
+
+@keyframes waPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,193,94,0.45), 0 8px 26px rgba(34,193,94,0.28); }
+  50% { box-shadow: 0 0 0 12px rgba(34,193,94,0), 0 8px 34px rgba(34,193,94,0.38); }
+}
+.animate-wa { animation: waPulse 2.2s infinite; }
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+.tick-line { background: linear-gradient(90deg, transparent, rgba(169,126,63,0.6), transparent); height: 1px; }
+
+.card-shadow { box-shadow: 0 18px 50px -18px rgba(15,35,64,0.22); }
+.card-shadow-lg { box-shadow: 0 30px 70px -20px rgba(15,35,64,0.30); }
+
+::selection { background: #0f2340; color: #faf7f1; }
