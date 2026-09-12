@@ -1,10 +1,10 @@
 @import "tailwindcss";
+@import "./fonts.css";
 
 @theme {
   --font-cairo: "Cairo", sans-serif;
   --font-almarai: "Almarai", sans-serif;
   --font-ruqaa: "Aref Ruqaa", serif;
-  --font-amiri: "Amiri", serif;
 }
 
 html { scroll-behavior: smooth; }
