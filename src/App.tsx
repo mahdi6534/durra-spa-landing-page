@@ -345,10 +345,8 @@ export default function App() {
                     </div>
                     <a href={PHONE_LINK} className="flex items-center gap-2 rounded-xl bg-[#d9b64a] text-[#0b1a30] px-4 py-3 font-extrabold text-sm hover:brightness-110"><Phone className="w-4 h-4" /> <span dir="ltr">{PHONE_DISPLAY}</span></a>
                   </div>
-                  <span className="self-start rounded-full bg-white/95 border border-[#c9a227]/40 px-3 py-1.5 text-[11px] font-extrabold text-[#0f2340] card-shadow">🤍 عميـلنا بالثوب الأبيض والغترة • أخصائينا بالزي البني الرسمي DORH SPA</span>
                 </div>
               </div>
-              <p className="mt-3 text-center text-[11.5px] text-[#5b6b82] font-bold">صور تعبيرية احترافية محتشمة — متوافقة مع سياسات إعلانات جوجل وسناب وتيك توك</p>
             </motion.div>
           </div>
 
