@@ -170,7 +170,7 @@ export default function Hero() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackContact("maps", { placement: "الواجهة" })}
-          className="group mt-8 flex w-full max-w-xl items-center gap-3 rounded-[1.5rem] border border-cream-50/25 bg-cocoa-900/35 p-3 pe-4 text-start backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-gold-300/60 hover:bg-cocoa-900/50"
+          className="group mt-10 flex w-full max-w-xl items-center gap-3 rounded-[1.5rem] border border-cream-50/25 bg-cocoa-900/35 p-3 pe-4 text-start backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-gold-300/60 hover:bg-cocoa-900/50"
         >
           <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blush-500 to-blush-700 text-cream-50 shadow-glow">
             <MapPinIcon className="h-6 w-6" />
