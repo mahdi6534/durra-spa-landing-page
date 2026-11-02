@@ -1,8 +1,28 @@
-import { memo, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import {
+  memo,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+} from "react";
 import heroPoster from "@/assets/images/hero-poster.jpg";
 import Logo from "./Logo";
-import { CalendarIcon, ChevronDown, MapPinIcon, SparkleIcon, WhatsAppIcon } from "./Icons";
-import { DISTRICT, FRESHA_LINK, LANDMARK, MAPS_LINK, STREET, whatsappLink } from "@/lib/links";
+import {
+  CalendarIcon,
+  ChevronDown,
+  MapPinIcon,
+  SparkleIcon,
+  WhatsAppIcon,
+} from "./Icons";
+import {
+  DISTRICT,
+  FRESHA_LINK,
+  LANDMARK,
+  MAPS_LINK,
+  STREET,
+  whatsappLink,
+} from "@/lib/links";
 import { trackContact } from "@/lib/track";
 
 const WISTIA_MEDIA_ID = "kfpvnsi5ow";
@@ -14,10 +34,22 @@ const WISTIA_MEDIA_ID = "kfpvnsi5ow";
 const WISTIA_HTML = `<wistia-player media-id="${WISTIA_MEDIA_ID}" aspect="1.7777777777777777" autoplay muted silent-autoplay end-video-behavior="loop" fit-strategy="cover" big-play-button="false" controls-visible-on-load="false" play-bar-control="false" play-pause-control="false" play-pause-notifier="false" fullscreen-control="false" settings-control="false" volume-control="false" quality-control="false" playback-rate-control="false" copy-link-and-thumbnail="false" rounded-player="0" preload="auto"></wistia-player>`;
 
 const VideoEmbed = memo(function VideoEmbed() {
-  return <div className="absolute inset-0" dangerouslySetInnerHTML={{ __html: WISTIA_HTML }} />;
+  return (
+    <div
+      className="absolute inset-0"
+      dangerouslySetInnerHTML={{ __html: WISTIA_HTML }}
+    />
+  );
 });
 
-type Petal = { left: number; delay: number; duration: number; size: number; drift: number; hue: string };
+type Petal = {
+  left: number;
+  delay: number;
+  duration: number;
+  size: number;
+  drift: number;
+  hue: string;
+};
 
 function Petals() {
   const petals = useMemo<Petal[]>(() => {
@@ -33,7 +65,10 @@ function Petals() {
   }, []);
 
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      aria-hidden="true"
+    >
       {petals.map((p, i) => (
         <span
           key={i}
@@ -102,22 +137,26 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover opacity-80"
       />
-
       {/* Wistia background video */}
-      <div className="hero-video pointer-events-none absolute" style={videoStyle}>
+      <div
+        className="hero-video pointer-events-none absolute"
+        style={videoStyle}
+      >
         <VideoEmbed />
       </div>
-
       {/* Overlays */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-cocoa-900/55 via-cocoa-900/25 to-cocoa-900/80" />
       <div className="pointer-events-none absolute inset-0 bg-blush-800/15 mix-blend-multiply" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-cream-100 to-transparent" />
       <Petals />
-
       {/* Content */}
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 pb-32 pt-28 sm:pb-36">
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 pb-48 pt-28 sm:pb-52">
         <div className="reveal is-visible">
-          <Logo tone="light" stacked className="drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)]" />
+          <Logo
+            tone="light"
+            stacked
+            className="drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)]"
+          />
         </div>
 
         <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-cream-50/30 bg-cream-50/10 px-4 py-1.5 text-xs font-medium tracking-wide text-cream-50 backdrop-blur-md sm:text-sm">
@@ -126,12 +165,14 @@ export default function Hero() {
         </span>
 
         <h1 className="font-display mt-6 text-5xl font-bold leading-[1.2] text-cream-50 drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)] text-balance sm:text-6xl md:text-7xl">
-          هنا… تبدأ حكاية <span className="gold-text animate-shimmer">بريقكِ</span>
+          هنا… تبدأ حكاية{" "}
+          <span className="gold-text animate-shimmer">بريقكِ</span>
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-100/90 text-balance sm:text-xl">
-          اتركي العالم خلف الباب. بخارٌ دافئ، أيادٍ خبيرة، عطر الورد المغربي، ولمسات تُعيد إليكِ أنوثتكِ
-          الأولى… لأنكِ لا تحجزين خدمة، بل تحجزين شعوراً لن تنسيه.
+          اتركي العالم خلف الباب. بخارٌ دافئ، أيادٍ خبيرة، عطر الورد المغربي،
+          ولمسات تُعيد إليكِ أنوثتكِ الأولى… لأنكِ لا تحجزين خدمة، بل تحجزين
+          شعوراً لن تنسيه.
         </p>
 
         <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
@@ -153,7 +194,9 @@ export default function Hero() {
             </span>
           </a>
           <a
-            href={whatsappLink("مرحباً درة سبا 🌸، أرغب باستشارة خبيرة الجمال قبل الحجز.")}
+            href={whatsappLink(
+              "مرحباً درة سبا 🌸، أرغب باستشارة خبيرة الجمال قبل الحجز.",
+            )}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackContact("whatsapp", { placement: "الواجهة" })}
@@ -177,11 +220,15 @@ export default function Hero() {
             <span className="absolute inset-0 rounded-full border-2 border-blush-300/70 animate-ping [animation-duration:2.4s]" />
           </span>
           <span className="min-w-0 flex-1 leading-snug">
-            <span className="block text-[11px] font-medium uppercase tracking-wider text-gold-300">موقعنا · على الطريق مباشرة</span>
+            <span className="block text-[11px] font-medium uppercase tracking-wider text-gold-300">
+              موقعنا · على الطريق مباشرة
+            </span>
             <span className="block truncate text-sm font-bold text-cream-50 sm:text-base">
               {STREET}، {DISTRICT}، الرياض
             </span>
-            <span className="block truncate text-xs text-cream-100/80">{LANDMARK} · يسهل الوصول إليه من أي مكان في الرياض</span>
+            <span className="block truncate text-xs text-cream-100/80">
+              {LANDMARK} · يسهل الوصول إليه من أي مكان في الرياض
+            </span>
           </span>
           <span className="hidden shrink-0 items-center gap-1 rounded-full bg-cream-50/15 px-3 py-1.5 text-xs font-bold text-cream-50 transition-colors group-hover:bg-gold-400 group-hover:text-cocoa-900 sm:inline-flex">
             اعرضي الخريطة
