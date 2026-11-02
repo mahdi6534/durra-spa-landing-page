@@ -1,0 +1,13 @@
+{
+  "name": "درة سبا | Dora Spa",
+  "short_name": "Dora Spa",
+  "description": "صالون نسائي فاخر في الرياض",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#FAF4EC",
+  "icons": [
+    { "src": "/favicon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
