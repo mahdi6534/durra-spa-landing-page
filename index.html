@@ -26,6 +26,54 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <!--
+      Critical fonts preloaded: once index.html stopped base64-embedding the
+      photos, first paint no longer waits ~10 s — so the fonts must be ready
+      before paint or the swap causes layout shift. Tajawal = body/buttons,
+      Amiri 700 = hero h1 (the LCP element).
+    -->
+    <link
+      rel="preload"
+      href="/fonts/tajawal-400-normal-arabic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/tajawal-400-normal-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/tajawal-700-normal-arabic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/tajawal-500-normal-arabic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/cormorant-garamond-600-normal-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/amiri-700-normal-arabic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <meta
       name="description"
       content="درة سبا – صالون نسائي فاخر في الرياض: حمام مغربي ملكي، عناية بالأظافر، باقات جمال، مساج، وأحدث معالجات الشعر. احجزي دلالكِ الآن."
