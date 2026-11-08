@@ -6,8 +6,8 @@ import { trackContact } from "@/lib/track";
 
 const PLACEMENT = "النافذة المنبثقة";
 
-const DELAY_MS = 60_000; // one minute after landing
-const STORAGE_KEY = "dorh-booking-popup-shown";
+const DELAY_MS = 5_000; // five seconds after landing
+const STORAGE_KEY = "dorh-booking-popup-shown-v2";
 
 export default function BookingPopup() {
   const [open, setOpen] = useState(false);
@@ -80,15 +80,25 @@ export default function BookingPopup() {
             <SparkleIcon className="h-3.5 w-3.5" />
             لحظة من فضلكِ
           </span>
-          <h3 id="booking-popup-title" className="font-display mt-3 text-3xl font-bold leading-tight text-cocoa-900">
+          <h3
+            id="booking-popup-title"
+            className="font-display mt-3 text-3xl font-bold leading-tight text-cocoa-900"
+          >
             هل شعرتِ بالفضول؟
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-cocoa-600">
-            موعدكِ على بُعد لمسة واحدة… اختاري الطريقة الأقرب لقلبكِ وسنتولى نحن الباقي.
+            موعدكِ على بُعد لمسة واحدة… اختاري الطريقة الأقرب لقلبكِ وسنتولى نحن
+            الباقي.
           </p>
 
           <div className="mt-6 space-y-2.5">
-            <FreshaButton variant="primary" size="lg" className="w-full" onClick={close} placement={PLACEMENT} />
+            <FreshaButton
+              variant="primary"
+              size="lg"
+              className="w-full"
+              onClick={close}
+              placement={PLACEMENT}
+            />
             <WhatsAppButton
               size="lg"
               label="استشيري خبيرة الجمال – واتساب"
@@ -97,7 +107,14 @@ export default function BookingPopup() {
               placement={PLACEMENT}
               message="مرحباً درة سبا 🌸، شاهدتُ صفحتكم وأرغب بالاستفسار وحجز موعد."
             />
-            <PhoneButton size="lg" label="اتصلي الآن" showNumber className="w-full" onClick={close} placement={PLACEMENT} />
+            <PhoneButton
+              size="lg"
+              label="اتصلي الآن"
+              showNumber
+              className="w-full"
+              onClick={close}
+              placement={PLACEMENT}
+            />
           </div>
 
           <a

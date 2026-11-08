@@ -29,7 +29,7 @@ export default function App() {
       </main>
       <Footer />
       <StickyBar />
-      <BookingPopup />
+      {/* <BookingPopup /> */}
     </div>
   );
 }
