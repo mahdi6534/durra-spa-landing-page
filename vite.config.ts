@@ -2,40 +2,39 @@ import path from "path";
 import { fileURLToPath } from "url";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import { defineConfig, type Plugin } from "vite";
-import { viteSingleFile } from "vite-plugin-singlefile";
+import { defineConfig } from "vite";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/**
- * vite-plugin-singlefile forces `assetsInlineLimit = () => true`, which
- * base64-embeds every image into index.html (~2 MB total). On mobile that
- * made FCP/LCP ≈ 10 s (the document itself is the bottleneck on Slow 4G).
- * Runs after the singlefile config hook and re-enables a sane threshold so
- * photos ship as separate cacheable files next to the HTML — same as the
- * public/ assets already do.
- */
-function limitAssetInline(): Plugin {
-  return {
-    name: "limit-asset-inline",
-    enforce: "post",
-    config() {
-      return {
-        build: {
-          assetsInlineLimit: 10240,
-        },
-      };
-    },
-  };
-}
-
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), viteSingleFile(), limitAssetInline()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    {
+      name: "rewrite-caviar-route",
+      configureServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          if (req.url === "/hair/treatment/caviar") {
+            req.url = "/hair/treatment/caviar/";
+          }
+          next();
+        });
+      },
+    },
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        hairCaviar: path.resolve(__dirname, "hair/treatment/caviar/index.html"),
+      },
     },
   },
 });

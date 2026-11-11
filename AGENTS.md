@@ -45,4 +45,3 @@ SEO, Open Graph, JSON-LD (`BeautySalon` schema with phone/geo/price), Google Tag
 ## Repo state
 
 - Branch `master` → `github.com/mahdi6534/durra-spa-landing-page`. Conventional commits (`feat:`, `fix:`, `perf:`, `chore:`).
-- `public/robots.txt` was deliberately deleted; don't re-add it without being asked.

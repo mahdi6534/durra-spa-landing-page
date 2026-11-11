@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StickyBar from "@/components/StickyBar";
-import BookingPopup from "@/components/BookingPopup";
 import Footer from "@/components/Footer";
 import LocationSection from "@/components/sections/LocationSection";
 import IntroSection from "@/components/sections/IntroSection";
